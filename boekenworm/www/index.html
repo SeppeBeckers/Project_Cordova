@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <meta name="author" content="Seppe Beckers">
+        <title>Boekenworm</title>
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
+            .image{
+                width: 50%;
+                float: left;
+
+            }
+            .fav-image{
+                width: 60%;
+                float: left;
+            }
+            .spa { display: none; }
+            #tabLijst { display: block; }
+        </style>
+    </head>
+    <body>
+    <div class="navbar-fixed">
+        <nav class="teal  red accent-4">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo center">Boekenworm</a>
+                <a href="#!" data-target="nav-mobile" class="sidenav-trigger show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <ul id="nav-mobile" class="sidenav draggable">
+        <li><div class="user-view">
+            <img class="circle" src="assets/logo.png">
+        </div></li>
+        <li><a class="wave-effect" href="#!" data-show="tabInfo"><i class="material-icons">info</i>Informatie</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="wave-effect" href="#!" data-show="tabBoek"><i class="material-icons">book</i>Boekenzoeker</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="wave-effect" href="#!" data-show="tabLijst" id="renew"><i class="material-icons">format_list_numbered</i>Uw boekenlijst</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="wave-effect" href="#!" data-show="tabBib"><i class="material-icons">local_library</i>Bibliotheek zoeken</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="wave-effect" href="#!" data-show="tabScanner"><i class="material-icons">camera</i>Scanner</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="row spa" id="tabInfo">
+            <div class="col s12">
+                <h4><i class="material-icons">account_circle</i> <u> Info ontwikkelaar: </u></h4>
+                <i><img src="assets/Seppe.png" class="circle small" width="60"></i>
+                <p>Naam: Seppe Beckers</p>
+                <p>Leeftijd: 19 </p>
+                <h4><i class="material-icons">question_answer</i> <u> Hoe te bereiken? </u></h4>
+                <p>E-mail: <a href="mailto:r0749133@student.thomasmore.be">r0749133@student.thomasmore.be</a></p>
+                <p> Telefoonnr:: <a href="tel:0474327847">0474 32 7847</a></p>
+                <p> Om een SMS te sturen: <a href="SMS:0474327847">0474 32 7847</a></p>
+                <h4><i class="material-icons">info_outline</i> <u> Info over de app </u></h4>
+                <p>Deze applicatie heeft verschillende tabladen waar u boeken kunt zoeken en toevoegen in uw favorietenlijst,
+                    ook kunt u bibliotheken zoeken en ten slot kunt u de barcode scannen van uw boek en dan toont deze app de informatie van de gescande boek  </p>
+                <div id="model"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row spa" id="tabBoek">
+                <div class="center row">
+                    <div class="col s12" >
+                        <div class="row">
+                            <div class="input-field col s6 s12 red-text">
+                                <i class="red-text material-icons prefix" id="zoeken">search</i>
+                                <input type="text" placeholder="Zoek boek" id="search" class="autocomplete red-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12" id="boeken">
+                </div>
+            </div>
+            <div class="container">
+                <div class="row spa" id="tabBib">
+                    <div class="col s12">
+                        <div class="center row">
+                            <div class="col s12" >
+                                <div class="row" id="topbarsearch">
+                                    <div class="input-field col s6 s12 red-text">
+                                        <i class="red-text material-icons prefix" id="bibliotheek">search</i>
+                                        <input type="text" placeholder="Bib zoeken" id="bibzoeken" class="autocomplete red-text" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe width="100%" height="500px" id="kaart" align="left"
+                                        src="https://maps.google.com/maps?q=bibliotheek%20geel&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+                            <style>.mapouter{position:relative;text-align:left;height:100%;width:100%;}.gmap_canvas
+                                                                                                       {overflow:hidden;background:none!important;height:100%;width:100%;}
+                            </style>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row spa" id="tabLijst">
+                        <h5><strong><u>Uw favorieten: </u></strong></h5>
+                        <div class="col s12" id="favorieten">
+                      </div>
+                        <div class="fixed-action-btn" id="reload">
+                            <a class="btn-floating btn-large red">
+                                <i class="large material-icons">update</i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                <div class="container">
+                    <div class="row spa" id="tabScanner">
+                        <form style="width: 100%; text-align: center; margin-top: 100%;">
+                            <input type="button" id="scanner" value="Scan Barcode" class="teal  red accent-4 waves-effect waves-light btn-large"/>
+                        </form>
+                        <div class="col s12" id="scanBoek">
+                        </div>
+                    </div>
+                </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/bib.js"></script>
+        <script type="text/javascript" src="js/boek.js"></script>
+        <script type="text/javascript" src="js/info.js"></script>
+        <script type="text/javascript" src="js/lijst.js"></script>
+                <script type="text/javascript" src="js/scanner.js"></script>
+    </body>
+</html>

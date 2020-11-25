@@ -1,0 +1,18 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "be.seppebeckers.app"
+    },
+    "cordova-gmv-barcode-scanner": {
+      "PACKAGE_NAME": "be.seppebeckers.app"
+    }
+  },
+  "dependent_plugins": {}
+}

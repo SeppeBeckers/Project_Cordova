@@ -1,0 +1,38 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": []
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "be.seppebeckers.app"
+    },
+    "cordova-gmv-barcode-scanner": {
+      "PACKAGE_NAME": "be.seppebeckers.app"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-gmv-barcode-scanner/www/main.js",
+      "id": "cordova-gmv-barcode-scanner.cordova-gmv-barcode-scanner",
+      "pluginId": "cordova-gmv-barcode-scanner",
+      "clobbers": [
+        "cordova.plugins.gmv-barcode-scanner"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-gmv-barcode-scanner": "1.3"
+  }
+}

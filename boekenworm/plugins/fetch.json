@@ -1,0 +1,42 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "com.manateeworks.barcodescanner": {
+    "source": {
+      "type": "registry",
+      "id": "com.manateeworks.barcodescanner@1.8.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-gmv-barcode-scanner": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-gmv-barcode-scanner"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
